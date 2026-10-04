@@ -1,6 +1,9 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
+    kdl = { "kdlfmt" },
+    bash = { "shfmt" },
+    cmake = { "gersemi" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
