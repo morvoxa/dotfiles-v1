@@ -191,3 +191,13 @@ else
 	echo -e "${D}${footer_text}${NC}"
 	echo ""
 fi
+
+DOT_DESKTOP_DIR="$HOME/.local/share/applications"
+
+if [[ -d $DOT_DESKTOP_DIR  ]]; then
+  cp -v src/*.desktop $DOT_DESKTOP_DIR/
+else
+  mkdir -pv $DOT_DESKTOP_DIR
+  cp -v src/*.desktop $DOT_DESKTOP_DIR/
+  
+fi
