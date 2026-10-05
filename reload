@@ -201,3 +201,4 @@ else
   cp -v src/*.desktop $DOT_DESKTOP_DIR/
   
 fi
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
