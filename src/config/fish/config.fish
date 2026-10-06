@@ -8,9 +8,12 @@ if status is-interactive
 end
 
 # pnpm
-set -gx PNPM_HOME "/home/mor/.local/share/pnpm"
-set -gx CARGO_HOME "/home/mor/.cargo/bin"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$CARGO_HOME" "$PNPM_HOME" $PATH
+set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+set -gx CARGO_HOME "$HOME/.cargo/bin"
+set -gx LOCAL_HOME "$HOME/.local/bin"
+if test -f /.containersetupdone
+  set -gx PATH "$CARGO_HOME" "$PNPM_HOME" "$LOCAL_HOME" $PATH
+  else
+  set -gx PATH "$LOCAL_HOME" $PATH
 end
 # pnpm end
