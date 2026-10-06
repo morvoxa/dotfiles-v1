@@ -1,0 +1,17 @@
+sudo xbps-install -S podman crun
+etc/containers/containers.conf
+[engine]
+cgroup_manager = "cgroupfs"
+runtime = "crun"
+
+[containers]
+cgroups = "enabled"
+pidns = "private"
+userns = "private"
+netns = "private"
+ipcns = "private"
+utsns = "private"
+
+podman system reset
+
+distrobox create -n boxenv
