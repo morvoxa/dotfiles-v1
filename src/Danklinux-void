@@ -1,0 +1,15 @@
+#this 
+echo "repository=https://void.danklinux.com/danklinux/current" | sudo tee /etc/xbps.d/danklinux.conf
+sudo xbps-install -S
+sudo xbps-install -S dgop danksearch dankcalendar
+
+#run installer
+curl -fsSL https://install.danklinux.com | sh
+
+#edit via sudo /usr/share/waylandsessions/niri.desktop
+[Desktop Entry]
+Name=Niri
+Comment=A scrollable-tiling Wayland compositor
+Exec=dbus-run-session /usr/bin/niri
+Type=Application
+DesktopNames=niri
