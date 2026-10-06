@@ -7,6 +7,10 @@ if status is-interactive
     abbr -a cmt "$HOME/dotfiles-v1/src/commit"
 end
 
-if test -f /.containersetupdone
-    set -gx PATH /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+# pnpm
+set -gx PNPM_HOME "/home/mor/.local/share/pnpm"
+set -gx CARGO_HOME "/home/mor/.cargo/bin"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$CARGO_HOME" "$PNPM_HOME" $PATH
 end
+# pnpm end
