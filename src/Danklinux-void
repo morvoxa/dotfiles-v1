@@ -1,7 +1,8 @@
 #this 
+echo "repository=https://void.danklinux.com/dms/current" | sudo tee /etc/xbps.d/dms.conf
 echo "repository=https://void.danklinux.com/danklinux/current" | sudo tee /etc/xbps.d/danklinux.conf
-sudo xbps-install -S
-sudo xbps-install -S dgop danksearch dankcalendar
+sudo xbps-install -Su
+sudo xbps-install -S dms
 
 #run installer
 curl -fsSL https://install.danklinux.com | sh
