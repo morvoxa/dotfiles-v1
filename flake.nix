@@ -1,16 +1,17 @@
 {
+  description = "A very basic flake";
+
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager";
+    nixpkgs.url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.zst";
   };
 
-  outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
-    {
-      homeConfigurations.mor = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home.nix ];
-      };
+  outputs = inputs: {
+    nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
+      modules = [
+        ./src/configuration.nix
+        ./src/cosmic.nix
+        ./src/neovim.nix
+      ];
     };
+  };
 }

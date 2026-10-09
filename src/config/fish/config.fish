@@ -4,7 +4,6 @@ if status is-interactive
     abbr -a ss "sudo pacman -Ss"
     abbr -a srm "sudo pacman -Rs"
     abbr -a cmt "$HOME/dotfiles-v1/src/commit"
-    devenv hook fish -- --no-tui | source
 end
 
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
