@@ -11,6 +11,7 @@
         ./src/configuration.nix
         ./src/cosmic.nix
         ./src/neovim.nix
+        ./src/distrobox.nix
       ];
     };
   };
