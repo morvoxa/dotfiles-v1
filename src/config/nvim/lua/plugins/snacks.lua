@@ -21,6 +21,28 @@ return {
 		words = { enabled = true },
 	},
 	keys = {
+
+		{
+			"<leader>q",
+			function()
+				Snacks.dashboard()
+			end,
+			desc = "Diagnostics",
+		},
+		{
+			"<leader>sd",
+			function()
+				Snacks.picker.diagnostics()
+			end,
+			desc = "Diagnostics",
+		},
+		{
+			"<leader>sD",
+			function()
+				Snacks.picker.diagnostics_buffer()
+			end,
+			desc = "Buffer Diagnostics",
+		},
 		{
 			"<leader>fb",
 			function()
