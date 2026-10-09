@@ -8,6 +8,7 @@ return {
 				kdl = { "kdlfmt" },
 				bash = { "shfmt" },
 				cmake = { "gersemi" },
+				nix = { "nixfmt" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
