@@ -18,7 +18,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<cr>", {})
 vim.api.nvim_set_keymap("i", "jk", "<esc>", {})
-vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>w", {})
+vim.api.nvim_set_keymap("n", "<leader>x", ":bd<cr>", {})
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>w", {})
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>W", {})
 local opt = vim.opt
 opt.number = true
 opt.relativenumber = true
@@ -27,6 +29,9 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.clipboard = "unnamedplus"
 opt.cmdheight = 0
+
+vim.keymap.set("n", "<leader>t", ":botright new | resize 15 | terminal<CR>", { desc = "Open Horizontal Terminal" })
+vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode" })
 
 require("lazy").setup({
 	spec = {
