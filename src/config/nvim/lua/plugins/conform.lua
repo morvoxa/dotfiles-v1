@@ -7,6 +7,7 @@ return {
 				lua = { "stylua" },
 				kdl = { "kdlfmt" },
 				bash = { "shfmt" },
+				sh = { "shfmt" },
 				cmake = { "gersemi" },
 				nix = { "nixfmt" },
 			},
