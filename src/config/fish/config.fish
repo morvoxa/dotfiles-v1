@@ -1,8 +1,9 @@
 if status is-interactive
   #for void
-    abbr -a si "sudo pacman -S"
-    abbr -a ss "sudo pacman -Ss"
-    abbr -a srm "sudo pacman -Rs"
+    abbr -a xii "sudo xbps-install -S"
+    abbr -a xse "sudo xbps-query -Rs"
+    abbr -a xrm "sudo xbps-remove -R"
+    abbr -a xoo "sudo xbps-remove -OOo"
     abbr -a cmt "$HOME/dotfiles-v1/src/commit"
 end
 
